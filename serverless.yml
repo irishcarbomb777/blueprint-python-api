@@ -1,0 +1,59 @@
+service: blueprint-python-api
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+package:
+  individually: true
+  exclude:
+    - venv/**
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:Query
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:DescribeTable
+      Resource: "arn:aws:dynamodb:us-east-1:*:*"
+
+functions:
+  # hello:
+  #   handler: handler.hello
+  #   events:
+  #     - http:
+  #         path: /
+  #         method: get
+
+  # numpyTest:
+  #   handler: handler.numpyTest
+  #   events:
+  #     - http:
+  #         path: /numpyTest
+  #         method: get
+
+  getMockup:
+    handler: getMockup.main
+    events:
+      - http:
+          path: getMockup
+          method: get
+  
+  getEvent:
+    handler: getEvent.main
+    events:
+      - http:
+          path: getEvent
+          method: get
