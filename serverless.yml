@@ -9,6 +9,8 @@ custom:
 
 package:
   individually: true
+  # Exclude files to decrease packaging size. If you don't do this
+  # it will get stuck on 'excluding dependencies' on deploy
   exclude:
     - venv/**
 
