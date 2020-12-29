@@ -59,3 +59,10 @@ functions:
       - http:
           path: getEvent
           method: get
+
+  runMockGen:
+    handler: runMockGen.main
+    events:
+      - http:
+        path: runMock
+        method: get
