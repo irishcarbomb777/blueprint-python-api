@@ -2,7 +2,7 @@ from libs.handlerLib import handler
 from libs.dynamodbLib import dynamoDb
 
 def main(event, context):
-    def func(event, context):
+    def fn(event, context):
         return event
     
-    return handler(func(event, context))
+    return handler(fn(event, context))

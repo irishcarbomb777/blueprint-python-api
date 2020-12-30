@@ -1,0 +1,29 @@
+#!/bin/bash
+
+username='dan@blueprintapparelcompany.com'
+password='Luckycharms1112'
+userPoolId='us-east-1_XNOWDtwOR'
+appClientId='4ogalcsrqvq8m55jgllibui8gt'
+cognitoRegion='us-east-1'
+identityPoolId='us-east-1:22e886ad-2c19-436e-9fcd-9495ed484f3c'
+invokeUrl='https://bll7tis7h1.execute-api.us-east-1.amazonaws.com/dev'
+apiGatewayRegion='us-east-1'
+pathTemplate='/gen'
+method='GET'
+body='{}'
+# params='{"itemId":"Jerzees"}'
+# additionalParams='{"queryParams":{"param0":"abc"}}'
+apig-test \
+--username=${username} \
+--password=${password} \
+--user-pool-id=${userPoolId}  \
+--app-client-id=${appClientId} \
+--cognito-region=${cognitoRegion} \
+--identity-pool-id=${identityPoolId} \
+--invoke-url=${invokeUrl} \
+--api-gateway-region=${apiGatewayRegion} \
+--path-template=${pathTemplate} \
+--method=${method} \
+--body=${body} \
+# --params=${params}
+# --additional-params=${additionalParams}

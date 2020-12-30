@@ -1,5 +1,5 @@
 {
-    "pathParameters": {
+    "queryStringParameters": {
         "itemId" : "Jerzees-29mr",
         "imprintId" : "leftChest"
     }

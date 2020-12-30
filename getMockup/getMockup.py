@@ -1,7 +1,7 @@
 from libs.handlerLib import handler
 from libs.dynamodbLib import dynamoDb
 def main(event, context):
-    def func(event, context):
+    def fn(event, context):
         call = dynamoDb['get']
         response = call(
             Key = {
@@ -10,7 +10,7 @@ def main(event, context):
             }
         )
         return response['Item']
-    return handler(func(event, context))
+    return handler(fn(event, context))
 
 
 
